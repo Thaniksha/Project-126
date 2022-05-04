@@ -1,0 +1,31 @@
+body{
+    background-size: cover;
+    text-align: center;
+}
+.play_button{
+    width: 100px;
+    font-size: large;
+}
+.div_speed_img,.div_volume_img{
+    width: 200px;
+    border-radius: 100px;
+}
+.heading{
+    margin: 0px;
+    color: black;
+    font-size:25px;
+    background-color:crimson;
+    font-weight:500;
+    border-radius: 200px;
+    font-family: 'Tapestry', cursive;
+    border:5px black double;
+}
+b{
+    color:rgb(252, 252, 252);
+}
+canvas{
+    background-color: grey;
+    border:5px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px crimson;
+}
