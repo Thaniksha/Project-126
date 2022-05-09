@@ -1,7 +1,9 @@
-songs=""
+song1=""
+song2=""
 
 function preload(){
-        songs=loadSound("stay.mp3")
+        song1=loadSound("Stay.mp3");
+        song2=loadSound("Shape_of_u.mp3");
    }
        
 function setup(){
