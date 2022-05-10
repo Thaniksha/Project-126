@@ -2,9 +2,8 @@ body{
     background-size: cover;
     text-align: center;
 }
-.play_button{
-    width: 100px;
-    font-size: large;
+button{
+    margin-top: 20px;
 }
 .div_speed_img,.div_volume_img{
     width: 200px;
