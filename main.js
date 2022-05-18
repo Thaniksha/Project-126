@@ -5,6 +5,9 @@ rightWristY="";
 leftWristX="";
 leftWristY="";
 scoreLeftWrist="";
+song_stay="";
+
+
 
 function preload(){
         song1=loadSound("Stay.mp3");
@@ -28,6 +31,10 @@ function setup(){
 
   function gotPoses(results){
        if(results.length>0){
+
+          scoreLeftWrist=results[0].pose.keypoints[9].score;
+          console.log(scoreLeftWrist);
+
            rightWristX=results[0].pose.rightWrist.x;
            rightWristY=results[0].pose.rightWrist.y;
            console.log("RightWristX=" +rightWristX +"RightWristY="+rightWristY);
@@ -43,17 +50,22 @@ function setup(){
              image(video,0,0,450,450);
              fill("red");
              stroke("black");
+        
+             song_stay=song1.isPlaying();
+             console.log(song_stay);
 
-             
      if(scoreLeftWrist>0.2){
         circle(leftWristX,leftWristY,20);
-        InNumberLeftWrist=Number(leftWristY);
-        remove_decimal=floor(InNumberLeftWrist);
-        volume=remove_decimal/500;
-        document.getElementById("volume").innerHTML="volume"+volume;
-        song.setVolume(volume);
-    }
+        song1.stop();
+        if(song_stay == false){
+            song1.play();
+        }
+        else{
+            document.getElementById("song_name").innerHTML="Song Name:STAY song"
+        }
         
+     }
+    
          }
  function play(){
              song1.play()
@@ -62,3 +74,4 @@ function setup(){
              
          }
      
+    
