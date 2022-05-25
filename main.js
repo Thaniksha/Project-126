@@ -73,7 +73,7 @@ function setup(){
             song2.stop();
             if(song1_status == false){
                 song1.play();
-                son
+            
                 document.getElementById("song_name").innerHTML="Song Name:Stay song"
             }
         
