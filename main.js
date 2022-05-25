@@ -7,6 +7,7 @@ leftWristY=0;
 scoreLeftWrist="";
 song1_status="";
 song2_status="";
+scoreRightWrist="";
 
 
 
@@ -35,7 +36,9 @@ function setup(){
            console.log(results);
 
           scoreLeftWrist=results[0].pose.keypoints[9].score;
-          console.log(scoreLeftWrist);
+          console.log("LeftWrist_score="+scoreLeftWrist);
+          scoreRightWrist=results[0].pose.keypoints[10].score;
+          console.log("RightWrist_score="+scoreRightWrist);
 
            rightWristX=results[0].pose.rightWrist.x;
            rightWristY=results[0].pose.rightWrist.y;
@@ -54,8 +57,9 @@ function setup(){
              stroke("black");
         
              song1_status=song1.isPlaying();
+             console.log("Song_shape_of_u"+song2_status)
              song2_status=song2.isPlaying();
-             console.log(song1_status);
+             console.log("Song_stay="+song1_status);
 
      if(scoreLeftWrist>0.2){
         circle(leftWristX,leftWristY,20);
@@ -64,9 +68,18 @@ function setup(){
             song2.play();
             document.getElementById("song_name").innerHTML="Song Name:Shape of you song"
         }
+        if(scoreRightWrist>0.2){
+            circle(rightWristX,rightWristY,20);
+            song2.stop();
+            if(song1_status == false){
+                song1.play();
+                son
+                document.getElementById("song_name").innerHTML="Song Name:Stay song"
+            }
         
      }
     
+    }
          }
  function play(){
              song.play()
